@@ -74,7 +74,12 @@ docs/_build/
 # PyBuilder
 .pybuilder/
 target/
-
+Models/SDF.py
+Models/test-sdxl-v2.py
+Models/test-sdxl.py
+generated_image-1.png
+generated_image-2.png
+generated_image.png
 # Jupyter Notebook
 .ipynb_checkpoints
 
