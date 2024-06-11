@@ -31,9 +31,6 @@ with st.sidebar:
     
 if selected == "Stable Diffusion XL":
     display_SDFv2(HUGGINGFACE_API_KEY)
-elif selected == "Brea v2":
-    display_Brea(HUGGINGFACE_API_KEY)
 elif selected == "DreamShaper v7":
     display_DreamShaper_v7(HUGGINGFACE_API_KEY1)
-elif selected == "Anime Diffusion":
-    display_Anime_df(HUGGINGFACE_API_KEY1)
+
