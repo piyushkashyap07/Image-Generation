@@ -2,11 +2,11 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from dotenv import load_dotenv
 import os
-from Models.SDF import display_SDF
+from Models.SDFv2 import display_SDFv2
 from Models.Brea import display_Brea
 from Models.DreamShaperv7 import display_DreamShaper_v7
 from Models.Anime_DF import display_Anime_df
-
+from dotenv import load_dotenv
 
 load_dotenv()
 # HUGGINGFACE_API_KEY = st.secrets['HUGGINGFACE_API_KEY']
@@ -14,7 +14,6 @@ load_dotenv()
 HUGGINGFACE_API_KEY = os.getenv('HUGGINGFACE_API_KEY')
 HUGGINGFACE_API_KEY1 = os.getenv('HUGGINGFACE_API_KEY')
 
-# OPEN_AI_API = st.secrets['OPEN_AI_API']
 
 st.set_page_config(
         page_title="Generative Image",
@@ -31,12 +30,10 @@ with st.sidebar:
                            )
     
 if selected == "Stable Diffusion XL":
-    display_SDF(HUGGINGFACE_API_KEY)
+    display_SDFv2(HUGGINGFACE_API_KEY)
 elif selected == "Brea v2":
     display_Brea(HUGGINGFACE_API_KEY)
 elif selected == "DreamShaper v7":
     display_DreamShaper_v7(HUGGINGFACE_API_KEY1)
 elif selected == "Anime Diffusion":
     display_Anime_df(HUGGINGFACE_API_KEY1)
-# elif selected == "Dall-e2":
-#     display_Dall_e3(OPEN_AI_API)

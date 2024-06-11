@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import io
+import time
 from PIL import Image
 
 @st.cache_data
@@ -14,8 +15,11 @@ def SDF_v2(token, inputs, guide_scale, inference_steps,Negative):
         "num_inference_steps": inference_steps,
         "negative_prompt":Negative
     }
-    
+    time.sleep(5)
+    # print("token", token)
     response = requests.post(API_URL, headers=headers, json=payload)
+    # print(response)
+    time.sleep(5)
     image_bytes = response.content
 
     return image_bytes
@@ -82,3 +86,5 @@ def display_SDFv2(token):
     
         except Exception as e:
             st.chat_message("assistant").write("Our Server is at Max Capacity Try using Different Model !")
+            
+            
